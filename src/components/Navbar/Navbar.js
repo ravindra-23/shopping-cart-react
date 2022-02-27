@@ -1,6 +1,7 @@
 import React from 'react'
-import { AppBar, Badge, IconButton, Toolbar, Typography } from '@material-ui/core'
+import { AppBar, Badge, IconButton, Toolbar, Typography, InputBase } from '@material-ui/core'
 import ShopIcon from '@material-ui/icons/Shop';
+import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './styles'
 
@@ -22,6 +23,21 @@ const Navbar = () => {
                 </Typography>
 
                 <div className={classes.grow}/>
+                
+                <div className={classes.search}>
+                    <div className={classes.searchIcon}>
+                        <SearchIcon />
+                    </div>
+                    <InputBase
+                        placeholder="Search…"
+                        classes={{
+                            root: classes.inputRoot,
+                            input: classes.inputInput,
+                        }}
+                        inputProps={{ 'aria-label': 'search' }}
+                    />
+                </div>
+
 
                 <div className={classes.buttons}>
                     <IconButton aria-label='show cart items' color='inherit' size='large'>
