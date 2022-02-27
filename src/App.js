@@ -1,8 +1,11 @@
 import React from 'react'
+import { Navbar } from './components'
 
 const App = () => {
   return (
-    <div>React App Working</div>
+    <>
+      <Navbar />
+    </>
   )
 }
 
