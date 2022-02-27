@@ -5,6 +5,7 @@ import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './styles'
 import { Context } from '../../Context/Context';
+import { Link } from 'react-router-dom';
 
 const Navbar = () => {
   const classes = useStyles()
@@ -19,7 +20,12 @@ const Navbar = () => {
                 >
                     <ShopIcon />
                 </IconButton>
-                <Typography variant='h6' className={classes.title}>
+                <Typography 
+                    variant='h6' 
+                    className={classes.title}
+                    component={Link}
+                    to='/'
+                >
                     Shopcart
                 </Typography>
 
@@ -41,7 +47,12 @@ const Navbar = () => {
 
 
                 <div className={classes.buttons}>
-                    <IconButton aria-label='show cart items' color='inherit'>
+                    <IconButton 
+                        aria-label='show cart items' 
+                        color='inherit'
+                        component={Link}
+                        to='/cart'
+                    >
                         <Badge badgeContent={cart.length} color='secondary'>
                             <ShoppingCartIcon />
                         </Badge>
