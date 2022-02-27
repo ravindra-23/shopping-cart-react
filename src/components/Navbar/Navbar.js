@@ -1,18 +1,19 @@
-import React from 'react'
+import React, { useContext } from 'react'
 import { AppBar, Badge, IconButton, Toolbar, Typography, InputBase } from '@material-ui/core'
 import ShopIcon from '@material-ui/icons/Shop';
 import SearchIcon from '@material-ui/icons/Search';
 import ShoppingCartIcon from '@material-ui/icons/ShoppingCart';
 import useStyles from './styles'
+import { Context } from '../../Context/Context';
 
 const Navbar = () => {
   const classes = useStyles()
+  const { cart } = useContext(Context)
   return (
     <>
         <AppBar position='fixed' className={classes.appBar}>
             <Toolbar>
                 <IconButton
-                    size='large'
                     color='inherit'
                     className={classes.logo}
                 >
@@ -40,8 +41,8 @@ const Navbar = () => {
 
 
                 <div className={classes.buttons}>
-                    <IconButton aria-label='show cart items' color='inherit' size='large'>
-                        <Badge badgeContent={2} color='secondary'>
+                    <IconButton aria-label='show cart items' color='inherit'>
+                        <Badge badgeContent={cart.length} color='secondary'>
                             <ShoppingCartIcon />
                         </Badge>
                     </IconButton>
