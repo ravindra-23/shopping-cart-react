@@ -1,5 +1,5 @@
 import React from 'react'
-import { Navbar, Products } from './components'
+import { Navbar, Products, Cart } from './components'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import { CssBaseline } from '@material-ui/core'
 
@@ -11,6 +11,7 @@ const App = () => {
         <Navbar />
         <Routes>
           <Route exact path='/' element={<Products />}/>
+          <Route path='/cart' element={<Cart />}/>
         </Routes>
       </div>
     </Router>
