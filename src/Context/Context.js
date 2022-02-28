@@ -11,12 +11,27 @@ const ContextProvider = ({ children }) => {
     const addToCart = (item) => {
         setCart(prevCart => [...prevCart, item])
     }
-    
 
-    console.log(cart)
+    const removeProduct = (id) => {
+        setCart(prevCart => prevCart.filter(item => item.id !== id))
+    }
+
+    const emptyCart = () => setCart([])
+    
+    const increaseProductQty = (id) => {
+        const updatedCart = cart.map(item => item.id === id ? {...item, quantity: item.quantity + 1} : item )
+        setCart(updatedCart)
+    }
+
+    const decreaseProductQty = (id) => {
+        const updatedCart = cart.map(item => item.id === id ? {...item, quantity: item.quantity - 1} : item )
+        setCart(updatedCart)
+    }
+
+    console.log(totalArr)
 
     return (
-        <Context.Provider value={{ addToCart, cart, totalPrice }}>
+        <Context.Provider value={{ addToCart, cart, totalPrice, increaseProductQty, decreaseProductQty, removeProduct, emptyCart }}>
             {children}
         </Context.Provider>
     )
