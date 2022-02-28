@@ -15,6 +15,7 @@ export default makeStyles((theme) => ({
         alignItems: 'center',
         display: 'flex',
         textDecoration: 'none',
+        color: '#fff',
     },
 
     grow: {
