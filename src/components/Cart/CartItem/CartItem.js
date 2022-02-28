@@ -16,7 +16,7 @@ const CartItem = ({ item }) => {
       </CardContent>
       <CardActions className={classes.cardActions}>
         <div className={classes.buttons}>
-          <Button type="button" size="small" onClick={() => item.quantity > 0 ? decreaseProductQty(item.id) : removeProduct()}>-</Button>
+          <Button type="button" size="small" onClick={() => item.quantity > 1 ? decreaseProductQty(item.id) : removeProduct(item.id)}>-</Button>
           <Typography>&nbsp;{item.quantity}&nbsp;</Typography>
           <Button type="button" size="small" onClick={() => increaseProductQty(item.id)}>+</Button>
         </div>
