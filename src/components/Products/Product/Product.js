@@ -19,7 +19,7 @@ const Product = ({ product }) => {
             {product.name}
           </Typography>
           <Typography gutterBottom variant="h5" component="h2">
-            {product.price}
+          ₹{Number(product.price).toLocaleString()}
           </Typography>
         </div>
         <Typography variant="body2" color="textSecondary">{product.description}</Typography>

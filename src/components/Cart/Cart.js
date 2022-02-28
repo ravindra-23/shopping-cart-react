@@ -6,7 +6,7 @@ import useStyles from './styles'
 import { Link } from 'react-router-dom'
 
 const Cart = () => {
-  const { cart } = useContext(Context)
+  const { cart, totalPrice } = useContext(Context)
   const classes = useStyles()
 
   const renderEmptyCart = () => (
@@ -27,7 +27,7 @@ const Cart = () => {
         ))}
       </Grid>
       <div className={classes.cardDetails}>
-        <Typography variant="h4">Subtotal:</Typography>
+        <Typography variant="h4">Subtotal: ₹{totalPrice}</Typography>
         <div>
           <Button className={classes.emptyButton} size="large" type="button" variant="contained" color="secondary">Empty cart</Button>
           <Button className={classes.checkoutButton} component={Link} to="/checkout" size="large" type="button" variant="contained" color="primary">Checkout</Button>
